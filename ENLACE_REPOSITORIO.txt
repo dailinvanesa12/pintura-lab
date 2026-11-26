@@ -1,0 +1,11 @@
+Evidencia: GA7-220501096-AA2-EV02 - Módulos de software codificados y probados
+Proyecto: Pintura Lab
+Módulo: Administración de categorías
+
+Integrantes:
+- Dailin Alvarado Zaraza
+- Samuel Suarez Peña
+- Jessika Cortes Bravo
+
+Enlace del repositorio:
+https://github.com/dailinvanesa12/pintura-lab
