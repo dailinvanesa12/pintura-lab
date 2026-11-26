@@ -1,58 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pintura Lab
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplicación web de venta de pinturas y accesorios (brochas, rodillos y afines).
+Proyecto formativo SENA ADSO - Evidencia GA7-220501096-AA2-EV02.
 
-## About Laravel
+## Módulo desarrollado: Administración de categorías
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+El administrador puede crear, listar, buscar, editar y eliminar las categorías de productos
+(por ejemplo: pinturas para interiores, para exteriores, a base de agua, de aceite, especiales).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Formularios HTML con método **GET** (búsqueda por nombre) y **POST** (crear, actualizar y eliminar).
+- Validaciones: nombre obligatorio, mínimo 3 caracteres, sin repetir y descripción de máximo 255 caracteres.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tecnologías
 
-## Learning Laravel
+- Laravel (PHP), plantillas Blade, MySQL.
+- Git y GitHub para el versionamiento.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Requisitos
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP y Composer
+- MySQL (por ejemplo con XAMPP)
+- Git
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Cómo ejecutarlo
 
-## Agentic Development
+1. Descargar el proyecto:
+   git clone https://github.com/dailinvanesa12/pintura-lab.git
+   cd pintura-lab
+2. Instalar las dependencias:
+   composer install
+3. Crear el archivo de configuración:
+   copy .env.example .env
+   php artisan key:generate
+4. Encender MySQL (en XAMPP, botón Start) y crear las tablas:
+   php artisan migrate
+   (si pregunta por crear la base de datos, responder yes)
+5. Iniciar el servidor:
+   php artisan serve
+6. Abrir en el navegador:
+   - Inicio: http://127.0.0.1:8000/inicio
+   - Categorías: http://127.0.0.1:8000/categorias
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Rutas del módulo
 
-```bash
-composer require laravel/boost --dev
+| Método | Ruta | Acción |
+|---|---|---|
+| GET | /categorias | Listar y buscar (`?buscar=`) |
+| GET | /categorias/crear | Formulario de nueva categoría |
+| POST | /categorias | Guardar categoría |
+| GET | /categorias/{id}/editar | Formulario de edición |
+| PUT | /categorias/{id} | Actualizar categoría |
+| DELETE | /categorias/{id} | Eliminar categoría |
 
-php artisan boost:install
-```
+## Integrantes
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Dailin Alvarado
+- Samuel Suarez Peña
+- Jessika Cotes Bravo
+- 
